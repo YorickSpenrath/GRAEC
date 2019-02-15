@@ -20,4 +20,4 @@ The second header line contains whether the feature should be interpreted as a f
 The third header line contains whether the feature is categorical. The real dataset only contained categorical data, the k-medoid reduction assumes only categorical data (it uses jaccard distance). The simulation dataset is balanced, so no kmedoid reduction is required.
 The fourth line contains information of the type of the column. Prediction features should be labeled as 'X', the Case_id should be labeled as 'ID'. There should be exactly one column marked as 'ID'. The script will later create a column with labels, 'Y', and a column with data timestamps 'SPLIT'.
 
-If you have any issues or ideas for improvement, you may contact me at y.spenrath@student.tue.nl, though I am currently writing my master thesis, so it might take a while before I respond.
+If you have any issues or ideas for improvement, you may contact me at y dot spenrath at student dot tue dot nl, though I am currently writing my master thesis, so it might take a while before I respond.
