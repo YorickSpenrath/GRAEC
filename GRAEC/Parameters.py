@@ -1,7 +1,6 @@
 """
 Process Parameter settings: global settings for experiments
 """
-# to be tested...
 
 from GRAEC.Functions import ISLAPTOP, Model_Functions
 from GRAEC.AUXILIARY_FUNCTIONS.Concept_Drifters import LinearConceptDrifter, LinearTimer
@@ -9,10 +8,8 @@ from GRAEC.AUXILIARY_FUNCTIONS.Concept_Drifters import LinearConceptDrifter, Lin
 Demo = True
 
 # root location of a run
-root_root_location = 'C:/Users/{}/Desktop/Master Thesis/BIS'.format(ISLAPTOP.username())
-branch = 'Dev'
-subfolder = 'Demo' if Demo else 'Real'
-root_location = root_root_location + '/' + branch + '/' + subfolder
+root_location = ''
+assert(root_location != '')
 
 # Algorithm values
 S_values = [1, 2, 3, 4] if Demo else [7, 14, 21, 28]
