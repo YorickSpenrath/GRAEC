@@ -8,7 +8,7 @@ from GRAEC.AUXILIARY_FUNCTIONS.Concept_Drifters import LinearConceptDrifter, Lin
 Demo = True
 
 # root location of a run
-root_location = 'C:/Users/Yorick Spenrath/Desktop/DSI4_Data'
+root_location = ''
 assert(root_location != '')
 
 # Algorithm values
