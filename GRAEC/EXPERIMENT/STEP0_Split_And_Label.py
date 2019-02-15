@@ -28,12 +28,14 @@ def create_labelled_dataset(event_log, s, feature_filename, output_file):
         Filefunctions.makeParentDir(output_file)
 
         with open(output_file, 'w+') as wf:
-            wf.write('Case_id;Case_start;Topic;Pages;Publications;Class\n')
-            wf.write('-;-;FALSE;TRUE;TRUE;-\n')
-            wf.write('-;-;TRUE;FALSE;FALSE;-\n')
-            wf.write('ID;SPLIT;X;X;X;Y\n')
+            wf.write(rf.readline()[:-1] + ';Case_start;Class\n')
+            wf.write(rf.readline()[:-1] + ';-;-\n')
+            wf.write(rf.readline()[:-1] + ';-;-\n')
+            wf.write(rf.readline()[:-1] + ';SPLIT;Y\n')
             for line in rf.readlines():
                 values = line[:-1].split(';')
+                case = event_log.get_case(values[0])
+                values.append(str(case.get_start()))
                 values.append(labels[values[0]])
                 wf.write(';'.join(values) + '\n')
 

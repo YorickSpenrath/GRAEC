@@ -2,13 +2,13 @@
 Process Parameter settings: global settings for experiments
 """
 
-from GRAEC.Functions import ISLAPTOP, Model_Functions
+from GRAEC.Functions import Model_Functions
 from GRAEC.AUXILIARY_FUNCTIONS.Concept_Drifters import LinearConceptDrifter, LinearTimer
 
 Demo = True
 
 # root location of a run
-root_location = ''
+root_location = 'C:/Users/Yorick Spenrath/Desktop/DSI4_Data'
 assert(root_location != '')
 
 # Algorithm values
@@ -51,7 +51,7 @@ number_of_activities_in_simulation = 4
 # The number of months in the simulation
 number_of_months = 60
 # The number of cases each topic has in each month
-cases_per_month_per_topic = 200
+cases_per_month_per_topic = 50
 # The maximum number of pages and publications a case has
 dimension_size = 100
 # Class to handle the gradual concept drift

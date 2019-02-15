@@ -63,11 +63,13 @@ class EventLog:
                 e = Event(case_id=case_id, time=float(timestamp), act=act)
                 # add it to the corresponding case (or create the new case if necessary)
                 self.cases.setdefault(case_id, Case(case_id=case_id)).add_event(e)
-        self.cases = set(self.cases.values())
+
+    def get_case(self, case_id):
+        return self.cases.get(case_id, None)
 
     def get_splits(self, s):
         ret = dict()
-        for c in self.cases:
+        for c in self.cases.values():
             start_time = c.get_start()
             period = int(start_time / s)
             ret.setdefault(period, set()).update({c})

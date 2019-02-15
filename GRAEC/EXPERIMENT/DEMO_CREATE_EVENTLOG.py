@@ -52,7 +52,7 @@ class ConceptDriftedEventLogCreator:
 
         case_id = '{}_{}_{}_{}'.format(month, case_number, str(short_case)[0], label_switch)
 
-        c_info = '{};{};{};{};{}\n'.format(case_id, time, topic, pages, publications)
+        c_info = '{};{};{};{}\n'.format(case_id, topic, pages, publications)
         e_info = '{};{};{}\n'.format(case_id, time, 'Start_Case')
 
         if short_case:
@@ -67,6 +67,11 @@ class ConceptDriftedEventLogCreator:
 
     def run(self, fn_cases, fn_event_log):
         with open(fn_cases, 'w+') as wf_cases:
+            # Info about each column:
+            wf_cases.write('Case_id;Topic;Pages;Publications\n')
+            wf_cases.write('-;FALSE;TRUE;TRUE\n')
+            wf_cases.write('-;TRUE;FALSE;FALSE\n')
+            wf_cases.write('ID;X;X;X\n')
             with open(fn_event_log, 'w+') as wf_event_log:
                 for month in range(number_of_months):
                     for c in range(cases_per_month):
