@@ -13,7 +13,9 @@ A complete simulation under the given parameters takes about 45 minutes, tested 
 
 To run the program on your own dataset, set the variable 'Demo' in Parameters.py to False. This requires you to format an event log and information about cases as follows:
 
-In the root folder (as set in Parameters.py) the event_log needs to be named 'Event_Log.csv'. Each line of this file contains one event, with the case ID, timestamp (as float) and activity label, separated by a ';' (no trailing ';', so a total of 2 ';' per line). The file may not contain a header. The case ID and activity label are interpreted as String. Furthermore, a file named 'Cases_info.csv' needs to be included in the root folder. This file needs to have four header lines.
+In the root folder (as set in Parameters.py) the event_log needs to be named 'Event_Log.csv'. Each line of this file contains one event, with the case ID, timestamp (as float) and activity label, separated by a ';' (no trailing ';', so a total of 2 ';' per line). The file may not contain a header. The case ID and activity label are interpreted as String.
+
+Furthermore, a file named 'Cases_info.csv' needs to be included in the root folder. This file needs to have four header lines. The first column needs to be the case_id. If the case id has no events in the event log, it will be skipped.
 
 The first header line is interpreted as strings, which are the feature names.
 The second header line contains whether the feature should be interpreted as a float.
