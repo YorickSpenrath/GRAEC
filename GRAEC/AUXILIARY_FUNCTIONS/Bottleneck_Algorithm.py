@@ -58,7 +58,7 @@ def algorithm(set_of_cases):
             # Line 14
             if len(k_2) != 0:
                 # Line 15
-                f = lambda x: (case.get_event(x).time - case.get_event(x - 1).time) / (std[x])
+                f = lambda x: (case.get_event(x).time - case.get_event(x - 1).time - avg[x]) / (std[x])
                 labels[case.case_id] = case.get_event(max([k for k in k_2], key=f)).act
             # Line 16
             else:
